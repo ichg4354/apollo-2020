@@ -1,6 +1,7 @@
 import { useQuery, gql } from "@apollo/client";
+import Movies from "../components/Movies";
 
-const getMovies = gql`
+const GETMOVIES = gql`
   query {
     movies {
       id
@@ -9,12 +10,13 @@ const getMovies = gql`
       medium_cover_image
       large_cover_image
       summary
+      description_full
     }
   }
 `;
 
 export default () => {
-  const { loading, error, data } = useQuery(getMovies);
+  const { loading, error, data } = useQuery(GETMOVIES);
   if (loading) {
     return "LOADING..";
   } else {
@@ -22,6 +24,6 @@ export default () => {
     if (error) {
       return error;
     }
-    return data.movies.map((each, key) => <h1 key={key}>{each.id}</h1>);
+    return data.movies.map((each) => <Movies key={each.id} id={each.id} />);
   }
 };
