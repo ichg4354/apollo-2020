@@ -4,4 +4,9 @@ import App from "./components/App";
 import { ApolloProvider } from "@apollo/client";
 import { client } from "./routes/apollo";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(
+  <ApolloProvider client={client}>
+    <App />
+  </ApolloProvider>,
+  document.getElementById("root")
+);
