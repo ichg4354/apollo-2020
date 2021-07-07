@@ -1,5 +1,8 @@
 import { gql, useQuery } from "@apollo/client";
 import { useParams } from "react-router-dom";
+import { styled } from "styled-components";
+
+
 
 const GETMOVIESBYID = gql`
   query getMoviesById($id: Int!) {
@@ -12,19 +15,19 @@ const GETMOVIESBYID = gql`
 
 export default () => {
   const { id } = useParams();
-  console.log(id);
   const { loading, error, data } = useQuery(GETMOVIESBYID, {
     variables: { id },
   });
   if (loading) {
-    console.log("LOADING");
+    return "LOADING..";
   } else {
-    const { movie } = data;
-    return (
-      <div>
-        <h1>{movie.title}</h1>
-      </div>
-    );
+    if (data) {
+      return (
+        <div>
+          <h1>{data?.movie?.title}</h1>
+        </div>
+      );
+    }
   }
   return "DETAIL";
 };
