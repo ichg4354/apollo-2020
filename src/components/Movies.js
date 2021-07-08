@@ -14,8 +14,8 @@ const Poster = styled.img`
     height: 350px;
   }
   @media only screen and (max-width: 750px) {
-    width: 150px;
-    height: 250px;
+    width: 180px;
+    height: 280px;
   } ;
 `;
 
@@ -23,7 +23,6 @@ export default ({ id, poster }) => {
   return (
     <Link to={`/${id}`}>
       <Poster src={poster} />
-      <h1>{id}</h1>
     </Link>
   );
 };
