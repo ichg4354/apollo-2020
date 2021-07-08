@@ -26,15 +26,38 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
+  justify-content: center;
   width: 100%;
   height: 100%;
 `;
 
 const MovieContainer = styled.div`
-  width: 100%;
-  display: flex;
-  grid-template-columns: 20% 20% 20% 20% 20%;asdf
-  grid-template-rows: 20% 20% 20% 20% 20%;
+  width: 80vw;
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20%;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  grid-row-gap: 60px;
+  grid-column-gap: 10px;
+  margin-top: 5vh;
+
+  @media only screen and (max-width: 1500px) {
+    grid-template-columns: 20% 20% 20%;
+    grid-column-gap: 20px;
+
+    width: 90vw;
+  }
+  @media only screen and (max-width: 1300px) {
+    grid-template-columns: 20% 20%;
+    grid-column-gap: 130px;
+    width: 90vw;
+  }
+  @media only screen and (max-width: 750px) {
+    grid-template-columns: 20% 20%;
+    grid-column-gap: 130px;
+    width: 90vw;
+  } ;
 `;
 
 const Loading = styled.div``;
