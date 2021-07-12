@@ -90,7 +90,7 @@ export default () => {
         <MovieDetails>
           <DetailsLeft>
             <Title>{shortenText(data?.movie?.title, 50)}</Title>
-            <Rating>{data?.movie?.rating}</Rating>
+            <Rating>Rating: {data?.movie?.rating}</Rating>
             <Summary>
               {shortenText(data?.movie?.description_full, 250) + "..."}
             </Summary>

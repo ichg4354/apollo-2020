@@ -40,12 +40,11 @@ const MovieContainer = styled.div`
   justify-items: center;
   grid-row-gap: 60px;
   grid-column-gap: 5px;
-  margin-top: 5vh;
-
+  position: relative;
+  top: -30px;
   @media only screen and (max-width: 1500px) {
     grid-template-columns: 20% 20% 20%;
     grid-column-gap: 20px;
-
     width: 90vw;
   }
   @media only screen and (max-width: 1300px) {
