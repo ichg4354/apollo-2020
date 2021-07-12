@@ -60,7 +60,12 @@ const MovieContainer = styled.div`
   } ;
 `;
 
-const Loading = styled.div``;
+const Loading = styled.div`
+  margin-top: 30vh;
+  font-weight: bold;
+  font-size: 30px;
+  color: gray;
+`;
 
 const GETMOVIES = gql`
   query {
