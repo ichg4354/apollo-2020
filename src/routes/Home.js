@@ -70,12 +70,8 @@ const GETMOVIES = gql`
   query {
     movies {
       id
-      title
-      rating
       medium_cover_image
-      large_cover_image
-      summary
-      description_full
+      isLiked @client
     }
   }
 `;
@@ -95,6 +91,7 @@ export default () => {
               key={each.id}
               id={each.id}
               poster={each.medium_cover_image}
+              isLiked={each.isLiked}
             />
           ))}
       </MovieContainer>
